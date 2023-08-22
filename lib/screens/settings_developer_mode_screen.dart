@@ -35,7 +35,7 @@ class _SettingsDeveloperModeScreenState
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.settingsDevelopment,
@@ -47,9 +47,9 @@ class _SettingsDeveloperModeScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.developerModeTitle,
-                    style: theme.textTheme.subtitle1),
+                    style: theme.textTheme.titleMedium),
                 Text(localizations.developerModeIntroduction,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 PlatformCheckboxListTile(
                   value: isDeveloperModeEnabled,
                   onChanged: (value) async {
@@ -65,9 +65,9 @@ class _SettingsDeveloperModeScreenState
                 ),
                 const Divider(),
                 Text(localizations.extensionsTitle,
-                    style: theme.textTheme.subtitle1),
+                    style: theme.textTheme.titleMedium),
                 Text(localizations.extensionsIntro,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 PlatformTextButton(
                   child: ButtonText(localizations.extensionsLearnMoreAction),
                   onPressed: () => launchUrl(
@@ -96,7 +96,7 @@ class _SettingsDeveloperModeScreenState
   }
 
   void _loadExtensionManually() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final controller = TextEditingController();
     String? url;
     final NavigationService navService = locator<NavigationService>();
@@ -172,7 +172,7 @@ class _SettingsDeveloperModeScreenState
   }
 
   void _reloadExtensions() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final accounts = locator<MailService>().accounts;
     final domains = <_AccountDomain>[];
     for (final account in accounts) {

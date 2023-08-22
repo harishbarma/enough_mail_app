@@ -66,7 +66,7 @@ class _IcalInteractiveMediaState extends State<IcalInteractiveMedia> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final event = _calendar?.event;
     if (event == null) {
       if (_isPermanentError) {

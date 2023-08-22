@@ -144,7 +144,7 @@ class _MessageSourceScreenState extends State<MessageSourceScreen>
   Widget build(BuildContext context) {
     // print('parent name: ${widget.messageSource.parentName}');
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final source = _sectionedMessageSource.messageSource;
     if (source is ErrorMessageSource) {
       return buildForLoadingError(context, localizations, source);
@@ -268,8 +268,8 @@ class _MessageSourceScreenState extends State<MessageSourceScreen>
       );
     } else if (source.supportsDeleteAll) {
       final iconService = locator<IconService>();
-      final style = TextButton.styleFrom(primary: Colors.grey[600]);
-      final textStyle = Theme.of(context).textTheme.button;
+      final style = TextButton.styleFrom(foregroundColor: Colors.grey[600]);
+      final textStyle = Theme.of(context).textTheme.labelLarge;
       zeroPosWidget = Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Wrap(
@@ -458,8 +458,8 @@ class _MessageSourceScreenState extends State<MessageSourceScreen>
                                 builder: (context, snapshot) {
                                   if (snapshot.hasError) {
                                     return PlatformListTile(
-                                      title: Row(
-                                        children: const [
+                                      title: const Row(
+                                        children: [
                                           Icon(Icons.replay),
                                           // TODO(RV): localize reload
                                           Text(' reload'),
@@ -1193,7 +1193,7 @@ class _MessageSourceScreenState extends State<MessageSourceScreen>
   }
 
   void _deleteAllMessages() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     bool expunge = false;
     final confirmed = await LocalizedDialogHelper.showWidgetDialog(
       context,

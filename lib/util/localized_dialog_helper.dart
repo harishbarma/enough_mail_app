@@ -10,7 +10,7 @@ class LocalizedDialogHelper {
   LocalizedDialogHelper._();
 
   static void showAbout(BuildContext context) async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final packageInfo = await PackageInfo.fromPlatform();
     var version = 'v${packageInfo.version}+${packageInfo.buildNumber}';
     showAboutDialog(
@@ -55,7 +55,7 @@ class LocalizedDialogHelper {
     String? action,
     bool isDangerousAction = false,
   }) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return DialogHelper.askForConfirmation(
       context,
       title: title,
@@ -75,7 +75,7 @@ class LocalizedDialogHelper {
     String text, {
     List<Widget>? actions,
   }) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return DialogHelper.showTextDialog(
       context,
       title,
@@ -98,7 +98,7 @@ class LocalizedDialogHelper {
     List<Widget>? actions,
     DialogActions defaultActions = DialogActions.ok,
   }) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return DialogHelper.showWidgetDialog(
       context,
       content,

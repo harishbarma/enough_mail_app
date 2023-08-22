@@ -245,8 +245,8 @@ class _AccountServerDetailsEditorState
       }
       return;
     } else {
-      final incoming = mailAccount.incoming!;
-      final outgoing = mailAccount.outgoing!;
+      final incoming = mailAccount.incoming;
+      final outgoing = mailAccount.outgoing;
       if (mounted) {
         setState(() {
           _incomingHostPortController.text =
@@ -282,7 +282,7 @@ class _AccountServerDetailsEditorState
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return SingleChildScrollView(
       child: Material(
         child: SafeArea(

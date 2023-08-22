@@ -88,7 +88,7 @@ class _DetailsScreenState extends State<MessageDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return BasePage(
       title: _current.mimeMessage.decodeSubject() ??
           localizations.subjectUndefined,
@@ -195,7 +195,7 @@ class _MessageContentState extends State<_MessageContent> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return MessageWidget(
       message: widget.message,
       child: _buildMailDetails(localizations),
@@ -532,7 +532,7 @@ class MessageContentsScreen extends StatelessWidget {
     return Base.buildAppChrome(
       context,
       title: message.mimeMessage.decodeSubject() ??
-          AppLocalizations.of(context)!.subjectUndefined,
+          AppLocalizations.of(context).subjectUndefined,
       content: SafeArea(
         child: MimeMessageViewer(
           mimeMessage: message.mimeMessage,
@@ -618,7 +618,7 @@ class _ThreadSequenceButtonState extends State<ThreadSequenceButton> {
             _removeOverlay();
           } else {
             _overlayEntry = _buildThreadsOverlay();
-            Overlay.of(context)!.insert(_overlayEntry!);
+            Overlay.of(context).insert(_overlayEntry!);
           }
         },
       ),
@@ -717,10 +717,10 @@ class _ReadReceiptButtonState extends State<ReadReceiptButton> {
   Widget build(BuildContext context) {
     final message = Message.of(context)!;
     final mime = message.mimeMessage;
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     if (mime.isReadReceiptSent) {
       return Text(localizations.detailsReadReceiptSentStatus,
-          style: Theme.of(context).textTheme.caption);
+          style: Theme.of(context).textTheme.bodySmall);
     } else if (_isSendingReadReceipt) {
       return const PlatformProgressIndicator();
     } else {
@@ -764,7 +764,7 @@ class _UnsubscribeButtonState extends State<UnsubscribeButton> {
     if (_isActive) {
       return const PlatformProgressIndicator();
     }
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     if (widget.message.isNewsletterUnsubscribed) {
       return widget.message.isNewsLetterSubscribable
           ? PlatformElevatedButton(
@@ -785,7 +785,7 @@ class _UnsubscribeButtonState extends State<UnsubscribeButton> {
   }
 
   void _resubscribe() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final mime = widget.message.mimeMessage;
     final listName = mime.decodeListName()!;
     final confirmation = await LocalizedDialogHelper.askForConfirmation(context,
@@ -825,7 +825,7 @@ class _UnsubscribeButtonState extends State<UnsubscribeButton> {
   }
 
   void _unsubscribe() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final mime = widget.message.mimeMessage;
     final listName = mime.decodeListName()!;
     final confirmation = await LocalizedDialogHelper.askForConfirmation(

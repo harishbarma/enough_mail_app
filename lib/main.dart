@@ -147,7 +147,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           locator<ScaffoldMessengerService>().scaffoldMessengerKey,
       builder: (context, child) {
         locator<I18nService>().init(
-            AppLocalizations.of(context)!, Localizations.localeOf(context));
+            AppLocalizations.of(context), Localizations.localeOf(context));
         child ??= FutureBuilder<MailService>(
           future: _appInitialization,
           builder: (context, snapshot) {

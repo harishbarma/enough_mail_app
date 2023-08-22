@@ -21,7 +21,7 @@ class MessageOverviewContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final msg = message;
     final mime = msg.mimeMessage;
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final threadLength =
         mime.threadSequence != null ? mime.threadSequence!.toList().length : 0;
     final subject = mime.decodeSubject() ?? localizations.subjectUndefined;

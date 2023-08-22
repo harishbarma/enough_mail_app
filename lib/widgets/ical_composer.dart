@@ -97,7 +97,7 @@ class _IcalComposerState extends State<IcalComposer> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     // final i18nService = locator<I18nService>();
     final end = _event.end;
     final start = _event.start!;
@@ -136,7 +136,7 @@ class _IcalComposerState extends State<IcalComposer> {
             Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 0.0),
               child: Text(localizations.icalendarLabelStart,
-                  style: theme.textTheme.caption),
+                  style: theme.textTheme.bodySmall),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -158,7 +158,7 @@ class _IcalComposerState extends State<IcalComposer> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 0.0),
                 child: Text(localizations.icalendarLabelEnd,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -205,7 +205,7 @@ class _IcalComposerState extends State<IcalComposer> {
                         languageCode: localizations.localeName,
                         startDate: start,
                       ),
-                      style: theme.textTheme.caption,
+                      style: theme.textTheme.bodySmall,
                     ),
               onTap: () async {
                 final result = await RecurrenceComposer.createOrEditRecurrence(
@@ -305,7 +305,7 @@ class DateTimePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final i18nService = locator<I18nService>();
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final dt = dateTime;
     return Row(
       children: [
@@ -377,7 +377,7 @@ class RecurrenceComposer extends StatefulWidget {
 
   static Future<Recurrence?> createOrEditRecurrence(BuildContext context,
       Recurrence? recurrenceRule, DateTime startDate) async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     // final iconService = locator<IconService>();
 
     final result = await ModelBottomSheetHelper.showModalBottomSheet(
@@ -417,7 +417,7 @@ class _RecurrenceComposerState extends State<RecurrenceComposer> {
   @override
   Widget build(BuildContext context) {
     final i18nService = locator<I18nService>();
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final rule = _recurrenceRule;
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -735,7 +735,7 @@ class _DayOfMonthSelectorState extends State<DayOfMonthSelector> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final rule = _byDayRule;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -858,7 +858,7 @@ class UntilComposer extends StatefulWidget {
 
   static Future<DateTime?> createOrEditUntil(BuildContext context,
       DateTime start, DateTime? until, IsoDuration? recommendation) async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     // final iconService = locator<IconService>();
     final result = await ModelBottomSheetHelper.showModalBottomSheet(
       context,
@@ -901,7 +901,7 @@ class _UntilComposerState extends State<UntilComposer> {
   @override
   Widget build(BuildContext context) {
     // final i18nService = locator<I18nService>();
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -922,7 +922,7 @@ class _UntilComposerState extends State<UntilComposer> {
             Padding(
               padding: const EdgeInsets.fromLTRB(8.0, 16.0, 8.0, 0.0),
               child: Text(localizations.composeAppointmentRecurrenceUntilLabel,
-                  style: theme.textTheme.caption),
+                  style: theme.textTheme.bodySmall),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),

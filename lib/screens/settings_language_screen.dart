@@ -51,7 +51,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.languageSettingTitle,
@@ -63,7 +63,7 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.languageSettingLabel,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 PlatformDropdownButton<_Language>(
                   value: _selectedLanguage,
                   onChanged: (value) async {
@@ -124,10 +124,10 @@ class _SettingsLanguageScreenState extends State<SettingsLanguageScreen> {
                 ),
                 if (_selectedLocalizations != null)
                   Text(_selectedLocalizations!.languageSetInfo,
-                      style: theme.textTheme.subtitle1)
+                      style: theme.textTheme.titleMedium)
                 else if (_systemSettingApplied)
                   Text(localizations.languageSystemSetInfo,
-                      style: theme.textTheme.subtitle1),
+                      style: theme.textTheme.titleMedium),
               ],
             ),
           ),

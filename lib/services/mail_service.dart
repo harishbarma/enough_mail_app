@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:enough_mail/enough_mail.dart';
 import 'package:enough_mail_app/events/app_event_bus.dart';
-import 'package:enough_mail_app/extensions/extensions.dart';
 import 'package:enough_mail_app/models/account.dart';
 import 'package:enough_mail_app/models/async_mime_source_factory.dart';
 import 'package:enough_mail_app/models/message_source.dart';

@@ -43,7 +43,7 @@ class _SettingsThemeScreenState extends State<SettingsThemeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final darkThemeStartTime = _themeSettings.themeDarkStartTime;
     final darkThemeEndTime = _themeSettings.themeDarkEndTime;
     final availableColors = ThemeSettings.availableColors;
@@ -60,7 +60,7 @@ class _SettingsThemeScreenState extends State<SettingsThemeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(localizations.designSectionThemeTitle,
-                      style: theme.textTheme.subtitle1),
+                      style: theme.textTheme.titleMedium),
                   PlatformRadioListTile<ThemeModeSetting>(
                     title: Text(localizations.designThemeOptionLight),
                     value: ThemeModeSetting.light,
@@ -103,7 +103,7 @@ class _SettingsThemeScreenState extends State<SettingsThemeScreen> {
                   ),
                   if (_themeModeSetting == ThemeModeSetting.custom) ...[
                     Text(localizations.designSectionCustomTitle,
-                        style: theme.textTheme.subtitle1),
+                        style: theme.textTheme.titleMedium),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -152,7 +152,7 @@ class _SettingsThemeScreenState extends State<SettingsThemeScreen> {
                   const Divider(),
                   Text(
                     localizations.designSectionColorTitle,
-                    style: theme.textTheme.subtitle1,
+                    style: theme.textTheme.titleMedium,
                   ),
                   GridView.count(
                     crossAxisCount: 4,

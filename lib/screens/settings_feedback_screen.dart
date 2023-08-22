@@ -56,7 +56,7 @@ class _SettingsFeedbackScreenState extends State<SettingsFeedbackScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
 
     return Base.buildAppChrome(
       context,
@@ -71,7 +71,7 @@ class _SettingsFeedbackScreenState extends State<SettingsFeedbackScreen> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(localizations.feedbackIntro,
-                      style: theme.textTheme.subtitle1),
+                      style: theme.textTheme.titleMedium),
                 ),
                 if (info == null)
                   const Padding(
@@ -83,7 +83,7 @@ class _SettingsFeedbackScreenState extends State<SettingsFeedbackScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       localizations.feedbackProvideInfoRequest,
-                      style: theme.textTheme.caption,
+                      style: theme.textTheme.bodySmall,
                     ),
                   ),
                   Padding(
@@ -95,7 +95,7 @@ class _SettingsFeedbackScreenState extends State<SettingsFeedbackScreen> {
                     child: PlatformIconButton(
                       icon: Icon(CommonPlatformIcons.copy),
                       onPressed: () {
-                        Clipboard.setData(ClipboardData(text: info));
+                        Clipboard.setData(ClipboardData(text: info!));
                         locator<ScaffoldMessengerService>().showTextSnackBar(
                             localizations.feedbackResultInfoCopied);
                       },

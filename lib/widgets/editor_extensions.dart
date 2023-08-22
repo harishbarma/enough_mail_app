@@ -59,7 +59,7 @@ class _EditorArtExtensionWidgetState extends State<EditorArtExtensionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final captions = {
       UnicodeFont.serifBold: localizations.fontSerifBold,
       UnicodeFont.serifItalic: localizations.fontSerifItalic,
@@ -82,7 +82,7 @@ class _EditorArtExtensionWidgetState extends State<EditorArtExtensionWidget> {
       UnicodeFont.underlinedDouble: localizations.fontUnderlinedDouble,
       UnicodeFont.strikethroughSingle: localizations.fontStrikethroughSingle,
     };
-    final captionStyle = Theme.of(context).textTheme.caption;
+    final captionStyle = Theme.of(context).textTheme.bodySmall;
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

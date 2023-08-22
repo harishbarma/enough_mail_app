@@ -44,7 +44,7 @@ class _SettingsDefaultSenderScreenState
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
 
     final aliasInfo = localizations.defaultSenderSettingsAliasInfo;
     final accountSettings =
@@ -70,7 +70,7 @@ class _SettingsDefaultSenderScreenState
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.defaultSenderSettingsLabel,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 FittedBox(
                   child: PlatformDropdownButton<MailAddress>(
                     value: _selectedSender,

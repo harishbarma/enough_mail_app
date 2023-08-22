@@ -384,7 +384,7 @@ class _ComposeScreenState extends State<ComposeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final titleText = widget.data.action == ComposeAction.answer
         ? localizations.composeTitleReply
         : widget.data.action == ComposeAction.forward

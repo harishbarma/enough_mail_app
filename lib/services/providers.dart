@@ -107,7 +107,7 @@ class Provider {
     required Function() onPressed,
     bool isSignInButton = false,
   }) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final providerName = displayName ?? '<unknown>';
     final buttonText = isSignInButton
         ? localizations.addAccountOauthSignIn(providerName)
@@ -188,7 +188,7 @@ class GmailProvider extends Provider {
     required Function() onPressed,
     bool isSignInButton = false,
   }) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     const googleBlue = Color(0xff4285F4);
     const googleText = Color(0x89000000);
     return Theme(

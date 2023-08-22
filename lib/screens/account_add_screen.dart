@@ -125,7 +125,7 @@ class _AccountAddScreenState extends State<AccountAddScreen> {
   @override
   Widget build(BuildContext context) {
     // print('build: current step=$_currentStep');
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.addAccountTitle,
@@ -335,7 +335,7 @@ class _AccountAddScreenState extends State<AccountAddScreen> {
                 Text(localizations.addAccountEmailLabel),
                 Text(
                   _emailController.text,
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],
             ),

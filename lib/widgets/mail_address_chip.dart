@@ -24,14 +24,14 @@ class MailAddressChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final theme = Theme.of(context);
     return PlatformPopupMenuButton<_AddressAction>(
       cupertinoButtonPadding: EdgeInsets.zero,
       icon: icon,
       title:
           mailAddress.hasPersonalName ? Text(mailAddress.personalName!) : null,
-      message: Text(mailAddress.email, style: theme.textTheme.caption),
+      message: Text(mailAddress.email, style: theme.textTheme.bodySmall),
       itemBuilder: (context) => [
         PlatformPopupMenuItem(
           value: _AddressAction.copy,

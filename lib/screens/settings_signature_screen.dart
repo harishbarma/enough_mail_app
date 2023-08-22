@@ -50,7 +50,7 @@ class _SettingsSignatureScreenState extends State<SettingsSignatureScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final accounts = locator<MailService>().accounts;
     final accountsWithSignature = List<RealAccount>.from(
       accounts.where(
@@ -85,7 +85,7 @@ class _SettingsSignatureScreenState extends State<SettingsSignatureScreen> {
                   const Divider(),
                   if (accountsWithSignature.isNotEmpty)
                     for (final account in accountsWithSignature) ...[
-                      Text(account.name, style: theme.textTheme.subtitle1),
+                      Text(account.name, style: theme.textTheme.titleMedium),
                       SignatureWidget(
                         account: account,
                       ),
@@ -131,7 +131,7 @@ class _SignatureWidgetState extends State<SignatureWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     if (_signature == null) {
       return PlatformListTile(
         leading: const Icon(Icons.add),
@@ -162,7 +162,7 @@ class _SignatureWidgetState extends State<SignatureWidget> {
   }
 
   void _showEditor() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconService = locator<IconService>();
     HtmlEditorApi? editorApi;
 

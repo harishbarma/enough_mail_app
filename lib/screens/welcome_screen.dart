@@ -15,7 +15,7 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final pages = _buildPages(localizations);
     return Theme(
       data: ThemeData(

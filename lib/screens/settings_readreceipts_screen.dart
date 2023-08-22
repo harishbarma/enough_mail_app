@@ -28,7 +28,7 @@ class _SettingsFoldersScreenState extends State<SettingsReadReceiptsScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.settingsReadReceipts,
@@ -40,7 +40,7 @@ class _SettingsFoldersScreenState extends State<SettingsReadReceiptsScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.readReceiptsSettingsIntroduction,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 PlatformRadioListTile<ReadReceiptDisplaySetting>(
                   value: ReadReceiptDisplaySetting.always,
                   groupValue: _readReceiptDisplaySetting,

@@ -11,7 +11,7 @@ class Legalese extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final legaleseUsage = localizations.legaleseUsage;
     final privacyPolicy = localizations.legalesePrivacyPolicy;
     final termsAndConditions = localizations.legaleseTermsAndConditions;

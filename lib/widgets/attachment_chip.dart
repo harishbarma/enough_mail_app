@@ -203,7 +203,7 @@ class _AttachmentChipState extends State<AttachmentChip> {
   Widget _buildInteractiveFallback(
       BuildContext context, MediaProvider mediaProvider) {
     final sizeText = locator<I18nService>().formatMemory(mediaProvider.size);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconData = locator<IconService>()
         .getForMediaType(MediaType.fromText(mediaProvider.mediaType));
 
@@ -219,7 +219,7 @@ class _AttachmentChipState extends State<AttachmentChip> {
             ),
             Text(
               mediaProvider.name,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             if (sizeText != null)
               Padding(

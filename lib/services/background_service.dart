@@ -5,7 +5,6 @@ import 'package:background_fetch/background_fetch.dart';
 import 'package:enough_mail/enough_mail.dart';
 import 'package:enough_mail_app/models/async_mime_source_factory.dart';
 import 'package:enough_mail_app/models/background_update_info.dart';
-import 'package:enough_mail_app/models/offline_mime_storage_factory.dart';
 import 'package:enough_mail_app/services/notification_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -67,7 +67,7 @@ class _RecipientInputFieldState extends State<RecipientInputField> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return DragTarget<MailAddress>(
       builder: (context, candidateData, rejectedData) {
         final labelText = widget.labelText;
@@ -219,7 +219,7 @@ class _RecipientInputFieldState extends State<RecipientInputField> {
                     label: Column(
                       children: [
                         if (option.hasPersonalName) Text(option.personalName!),
-                        Text(option.email, style: theme.textTheme.caption),
+                        Text(option.email, style: theme.textTheme.bodySmall),
                       ],
                     ),
                     onPressed: () {
@@ -311,7 +311,7 @@ class _AddressChip<T> extends StatelessWidget {
         label: Column(
           children: [
             Text(address.personalName ?? ''),
-            Text(address.email, style: Theme.of(context).textTheme.caption),
+            Text(address.email, style: Theme.of(context).textTheme.bodySmall),
           ],
         ),
         deleteIcon: const Icon(Icons.close),
@@ -324,7 +324,7 @@ class _AddressChip<T> extends StatelessWidget {
     return PlatformPopupMenuButton<T>(
       cupertinoButtonPadding: EdgeInsets.zero,
       title: address.hasPersonalName ? Text(address.personalName!) : null,
-      message: Text(address.email, style: theme.textTheme.caption),
+      message: Text(address.email, style: theme.textTheme.bodySmall),
       itemBuilder: (context) => menuItems,
       onSelected: onMenuItemSelected,
       child: content,

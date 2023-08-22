@@ -202,6 +202,9 @@ class ExpansionWrapElement extends RenderObjectElement {
     assert(child is RenderBox);
     _updateRenderObject(null, slot);
   }
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
 
 class _WrapParentData extends BoxParentData {

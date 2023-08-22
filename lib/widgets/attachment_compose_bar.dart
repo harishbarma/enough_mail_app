@@ -90,7 +90,7 @@ class AddAttachmentPopupButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconService = locator<IconService>();
     final themeService = locator<ThemeService>();
     final brightness = themeService.brightness(context);
@@ -325,7 +325,7 @@ class ComposeAttachment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: ClipRRect(

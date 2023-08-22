@@ -37,7 +37,7 @@ class _SettingsFoldersScreenState extends State<SettingsFoldersScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.settingsFolders,
@@ -49,7 +49,7 @@ class _SettingsFoldersScreenState extends State<SettingsFoldersScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.folderNamesIntroduction,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 PlatformRadioListTile<FolderNameSetting>(
                   value: FolderNameSetting.localized,
                   groupValue: folderNameSetting,
@@ -89,7 +89,7 @@ class _SettingsFoldersScreenState extends State<SettingsFoldersScreen> {
   }
 
   void _editFolderNames() async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final service = locator<SettingsService>();
     var customNames = service.settings.customFolderNames;
     if (customNames == null) {
@@ -170,7 +170,7 @@ class _CustomFolderNamesEditorState extends State<CustomFolderNamesEditor> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconService = locator<IconService>();
     return SingleChildScrollView(
       child: SafeArea(
@@ -266,7 +266,7 @@ class _FolderManagementState extends State<FolderManagement> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -329,7 +329,7 @@ class MailboxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -351,7 +351,7 @@ class MailboxWidget extends StatelessWidget {
               localizations.folderDeleteAction,
               style: Theme.of(context)
                   .textTheme
-                  .button!
+                  .labelLarge!
                   .copyWith(color: Colors.white),
             ),
           ),
@@ -360,7 +360,7 @@ class MailboxWidget extends StatelessWidget {
   }
 
   void _createFolder(context) async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final folderNameController = TextEditingController();
     final result = await LocalizedDialogHelper.showWidgetDialog(
       context,
@@ -396,7 +396,7 @@ class MailboxWidget extends StatelessWidget {
   }
 
   void _deleteFolder(BuildContext context) async {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final confirmed = await LocalizedDialogHelper.askForConfirmation(
       context,
       title: localizations.folderDeleteConfirmTitle,

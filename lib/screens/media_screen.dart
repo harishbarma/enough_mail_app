@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:enough_mail/enough_mail.dart';
 import 'package:enough_mail_app/models/account.dart';
@@ -36,7 +35,7 @@ class InteractiveMediaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconService = locator<IconService>();
     return Base.buildAppChrome(
       context,

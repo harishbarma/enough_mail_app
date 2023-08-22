@@ -36,7 +36,7 @@ class _SettingsReplyScreenState extends State<SettingsReplyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.replySettingsTitle,

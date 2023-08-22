@@ -65,7 +65,7 @@ class _SettingsSecurityScreenState extends State<SettingsSecurityScreen> {
   @override
   Widget build(BuildContext context) {
     //final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.securitySettingsTitle,

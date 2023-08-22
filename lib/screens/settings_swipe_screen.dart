@@ -19,7 +19,7 @@ class SettingsSwipeScreen extends StatelessWidget {
     final rightToLeftAction = settings.swipeRightToLeftAction;
 
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return Base.buildAppChrome(
       context,
       title: localizations.swipeSettingTitle,
@@ -31,14 +31,14 @@ class SettingsSwipeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(localizations.swipeSettingLeftToRightLabel,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 _SwipeSetting(
                   swipeAction: leftToRightAction,
                   isLeftToRight: true,
                 ),
                 const Divider(),
                 Text(localizations.swipeSettingRightToLeftLabel,
-                    style: theme.textTheme.caption),
+                    style: theme.textTheme.bodySmall),
                 _SwipeSetting(
                   swipeAction: rightToLeftAction,
                   isLeftToRight: false,
@@ -75,7 +75,7 @@ class _SwipeSettingState extends State<_SwipeSetting> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
 
     return Row(
       children: [
@@ -157,8 +157,8 @@ class _SwipeSettingState extends State<_SwipeSetting> {
         ),
       ),
       title: widget.isLeftToRight
-          ? localizations!.swipeSettingLeftToRightLabel
-          : localizations!.swipeSettingRightToLeftLabel,
+          ? localizations.swipeSettingLeftToRightLabel
+          : localizations.swipeSettingRightToLeftLabel,
       defaultActions: DialogActions.cancel,
     );
     if (action == false) {
@@ -177,7 +177,7 @@ class _SwipeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
 
     return Padding(
       padding: const EdgeInsets.all(4.0),

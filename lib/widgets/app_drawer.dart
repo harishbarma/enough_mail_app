@@ -24,7 +24,7 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final mailService = locator<MailService>();
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final iconService = locator<IconService>();
     final mailState = MailServiceWidget.of(context)!;
     final currentAccount = mailState.account ?? mailService.currentAccount;
@@ -172,7 +172,7 @@ class AppDrawer extends StatelessWidget {
       AppLocalizations localizations) {
     if (accounts.length > 1) {
       return ExpansionTile(
-        leading: mailService.hasAccountsWithErrors() ? Badge() : null,
+        leading: mailService.hasAccountsWithErrors() ? const Badge() : null,
         title: Text(localizations
             .drawerAccountsSectionTitle(mailService.accounts.length)),
         children: [

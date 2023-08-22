@@ -124,7 +124,7 @@ class _MessageActionsState extends State<MessageActions> {
                   value: _OverflowMenuChoice.reply,
                   child: IconText(
                     icon: Icon(iconService.messageActionReply),
-                    label: Text(localizations!.messageActionReply),
+                    label: Text(localizations.messageActionReply),
                   ),
                 ),
                 PlatformPopupMenuItem(
@@ -350,7 +350,7 @@ class _MessageActionsState extends State<MessageActions> {
     }
 
     final List<MailAddress> recipients = [];
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     final size = MediaQuery.of(context).size;
     final textEditingController = TextEditingController();
     final redirect = await LocalizedDialogHelper.showWidgetDialog(
@@ -363,7 +363,7 @@ class _MessageActionsState extends State<MessageActions> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(localizations.redirectInfo,
-                  style: Theme.of(context).textTheme.caption),
+                  style: Theme.of(context).textTheme.bodySmall),
               RecipientInputField(
                 addresses: recipients,
                 contactManager: account.contactManager,
